@@ -10,6 +10,13 @@
     [href^="tel"] {
         pointer-events: none;
     }
+    
+    .no-scroll {
+        overflow: hidden;
+        -ms-touch-action: none;
+        touch-action: none;
+        -webkit-overflow-scrolling: auto;
+    }
 
     //  ========================== Header ==========================
     .menu-list {

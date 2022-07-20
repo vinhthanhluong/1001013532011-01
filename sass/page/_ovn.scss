@@ -12,7 +12,7 @@
         display: none;
     }
     .active {
-        color: #005d9b;
+        color: $main-cl;
     }
 }
 
@@ -34,18 +34,18 @@
             align-items: center;
             font-weight: bold;
             background: #fff;
-            color: #005d9b;
+            color: $main-cl;
             height: 100%;
             text-align: center;
             padding: 22px 40px 20px 40px;
             text-decoration: none;
-            border: 2px solid #005d9b;
+            border: 2px solid $main-cl;
             transition: all 0.3s ease;
             font-size: 20px;
 
             &:hover{
                 color: #fff;
-                background-color: #005d9b;
+                background-color: $main-cl;
             }
         }
     }

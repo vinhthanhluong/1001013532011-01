@@ -10,11 +10,6 @@
   outline: none;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
 body,
 div,
 dl,
@@ -208,7 +203,6 @@ html {
 body {
   font-size: 14px;
   min-height: 100vh;
-  transform-origin: all 0.3s;
   min-width: 320px;
 }
 
@@ -296,24 +290,6 @@ p:last-child {
   object-fit: cover;
 }
 
-.img-l {
-  float: left;
-  margin: 0 60px 20px 0;
-  line-height: 0;
-}
-
-.img-r {
-  float: right;
-  margin: 0 0 20px 60px;
-  line-height: 0;
-}
-
-.img-c {
-  text-align: center;
-  margin: 0 auto 33px;
-  line-height: 0;
-}
-
 .lk-full {
   position: absolute;
   width: 100%;
@@ -336,13 +312,6 @@ p:last-child {
   height: 0;
   clear: both;
   visibility: hidden;
-}
-
-.no-scroll {
-  overflow: hidden;
-  -ms-touch-action: none;
-  touch-action: none;
-  -webkit-overflow-scrolling: auto;
 }
 
 .tt-14 {
@@ -689,6 +658,23 @@ p:last-child {
 #header h1 {
   font-size: 16px;
   padding-bottom: 0;
+}
+
+.idx_b08_ttl {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 59px;
+  line-height: 3;
+}
+
+.idx_b08_txt {
+  background: wheat;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 14px 20px 10px;
+  margin-bottom: 20px;
+  letter-spacing: 0.04em;
+  -webkit-box-decoration-break: clone;
 }
 
 /*============================= HACK CSS =============================*/

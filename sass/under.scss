@@ -3,6 +3,24 @@
 @import "./core/mixins";
 
 /*============================= G L O B A L =============================*/
+.img-l {
+    float: left;
+    margin: 0 60px 20px 0;
+    line-height: 0;
+}
+
+.img-r {
+    float: right;
+    margin: 0 0 20px 60px;
+    line-height: 0;
+}
+
+.img-c {
+    text-align: center;
+    margin: 0 auto 33px;
+    line-height: 0;
+}
+
 .main-under {
     section,
     .section {
@@ -199,6 +217,41 @@
         margin-bottom: 40px;
         font-size: 30px;
     }
+}
+
+.under-banner{
+    position: relative;
+    background-color: rgba($color: $main-cl, $alpha: .5);
+    text-align: center;
+    padding: 40px;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 8px;
+        height: 60%;
+        background-color:#000000;
+    } 
+
+    &::after{
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 8px;
+        height: 60%;
+        background-color: #000000;
+    }
+
+
+    .ubanner-tt{
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    
 }
 
 .under-step {

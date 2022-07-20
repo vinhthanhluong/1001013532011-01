@@ -14,7 +14,6 @@ html {
 body {
     font-size: $fz-body;
     min-height: 100vh;
-    transform-origin: all .3s;
     min-width: 320px;
 }
 
@@ -93,23 +92,6 @@ p:last-child {
         object-fit: cover;
     }
 }
-.img-l {
-    float: left;
-    margin: 0 60px 20px 0;
-    line-height: 0;
-}
-
-.img-r {
-    float: right;
-    margin: 0 0 20px 60px;
-    line-height: 0;
-}
-
-.img-c {
-    text-align: center;
-    margin: 0 auto 33px;
-    line-height: 0;
-}
 
 .lk-full{
     @include pos-full;
@@ -131,9 +113,4 @@ p:last-child {
     visibility: hidden;
 }
 
-.no-scroll {
-    overflow: hidden;
-    -ms-touch-action: none;
-    touch-action: none;
-    -webkit-overflow-scrolling: auto;
-}
+

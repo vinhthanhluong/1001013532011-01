@@ -92,16 +92,19 @@ $(function () {
             });
 
             if ($('.header-menu').length) {
-                // const _w = $(window).width();
-                // if (_w < 751) {
-                    
-                // }
-
                 $('.dropdown > span').click(function () {
                     $(this).toggleClass('open');
                     $(this).next('.sub-menu').stop().slideToggle();
                     // $(this).closest('.dropdown').siblings().find('.sub-menu').stop().slideUp();
                     // $(this).closest('.dropdown').siblings().find('span').removeClass('open');
+                });
+
+                $(window).on('resize load', function () {
+                    var _w = $(window).width();
+                    if (_w > 750) {
+                        $('.dropdown > span').removeClass('open');
+                        $('.sub-menu').removeAttr('style');
+                    }
                 });
             }
         },

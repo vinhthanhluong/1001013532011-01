@@ -26,6 +26,7 @@
 </ONPagenation>
 <!-- *********    /PAGINATION ********* -->
 
+<!-- *********   nextPage   ********* -->
 
 <div class="section">
     <div class="btn_prev_next_sec clearfix">
@@ -47,3 +48,47 @@
         </ul>
     </div>
 </div>
+
+<!--   Get Title    -->
+<div class="section">
+    <div class="btn_prev_next_sec clearfix">
+        <?php $current_url = $url; ?>
+        <?php $current_ttl = $title; ?>
+        <ONContributeSearch category="$current_category_id">
+            <ONContributeFetch>
+                <?php $pages[] = $url; ?>
+                <?php $titles[] = $title; ?>
+            </ONContributeFetch>
+        </ONContributeSearch>
+        <?php $current_page = array_search($current_url, $pages); ?>
+
+        <ul class="btn_prev_next">
+            <?php if ($prev = @$pages[$current_page+1]): ?>
+            <li class="prevPage"><a href="../<?php echo $prev ?>"><span>&#8592;
+                <?php echo $titles[$current_page+1]; ?></span></a></li>
+            <?php endif; ?>
+            <li class="centerPage"><a href="../{=$current_category_url=}/"><span>一覧に戻る</span></a></li>
+            <?php if ($next = @$pages[$current_page-1]): ?>
+            <li class="nextPage"><a
+                    href="../<?php echo $next ?>"><span><?php echo $titles[$current_page-1]; ?> &#8594;</span></a>
+            </li>
+            <?php endif ?>
+        </ul>
+    </div>
+</div>
+
+<!-- *********   /nextPage   ********* -->
+
+<!--   dùng cho file index , category     -->
+{=mb_strimwidth(strip_tags($text1_Value), 0, 200, '…', 'UTF-8')=}	
+
+
+<ONIf condition="$title">
+	<p class="news-title">
+		{=$title=}
+	</p>
+    <ONElse>
+    <p class="news-title">
+		asdasdasdasdasdasdasd
+	</p>
+</ONIf>

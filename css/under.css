@@ -1,4 +1,22 @@
 /*============================= G L O B A L =============================*/
+.img-l {
+  float: left;
+  margin: 0 60px 20px 0;
+  line-height: 0;
+}
+
+.img-r {
+  float: right;
+  margin: 0 0 20px 60px;
+  line-height: 0;
+}
+
+.img-c {
+  text-align: center;
+  margin: 0 auto 33px;
+  line-height: 0;
+}
+
 .main-under section,
 .main-under .section {
   margin-bottom: 80px;
@@ -7,17 +25,30 @@
 .main-under .section:last-child {
   margin-bottom: 0;
 }
+.main-under p:last-child,
+.main-under table:last-child {
+  margin-bottom: 0;
+}
+.main-under p {
+  margin-bottom: 15px;
+}
+.main-under a:hover {
+  color: #8cdcf0;
+}
+.main-under p,
+.main-under li,
+.main-under a,
+.main-under th,
+.main-under td,
+.main-under dt,
+.main-under dd,
+.main-under dl {
+  font-size: 18px;
+}
 .main-under #content {
   padding: 0 0 100px;
   margin: 0 auto;
   width: 1080px;
-}
-.main-under #content p:last-child,
-.main-under #content table:last-child {
-  margin-bottom: 0;
-}
-.main-under #content p {
-  margin-bottom: 15px;
 }
 
 .under-visual {
@@ -130,6 +161,36 @@
   text-align: center;
   margin-bottom: 40px;
   font-size: 30px;
+}
+
+.under-banner {
+  position: relative;
+  background-color: rgba(140, 220, 240, 0.5);
+  text-align: center;
+  padding: 40px;
+}
+.under-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 60%;
+  background-color: #000000;
+}
+.under-banner::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 8px;
+  height: 60%;
+  background-color: #000000;
+}
+.under-banner .ubanner-tt {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .under-step dl {
@@ -303,24 +364,26 @@
 }
 .under-anc li {
   margin: 0 24px 20px;
-}
-.under-anc a {
-  background: #4ec0dd;
-  font-weight: 500;
+  width: 365px;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.under-anc a {
   position: relative;
-  width: 365px;
+  width: 100%;
   height: 100%;
-  text-decoration: none;
+  background: #8cdcf0;
   font-size: 20px;
-  letter-spacing: -0.5px;
-  z-index: 1;
-  transition: all 0.3s ease;
-  padding: 20px 10px;
+  font-weight: 500;
   line-height: 1.2;
+  text-decoration: none;
+  letter-spacing: -0.5px;
   text-align: center;
+  padding: 20px 10px;
+  transition: all 0.3s ease;
+  z-index: 1;
 }
 .under-anc a::before {
   content: "";
@@ -353,19 +416,6 @@
   border-color: transparent transparent #ffe61e transparent;
 }
 
-.main-under p,
-.main-under li,
-.main-under a,
-.main-under th,
-.main-under td,
-.main-under dt,
-.main-under dd,
-.main-under dl {
-  font-size: 18px;
-}
-.main-under a:hover {
-  color: #4ec0dd;
-}
 .main-under .sec-wrapper {
   max-width: 1080px;
   margin: 0 auto;
@@ -388,6 +438,78 @@
 }
 
 /*============================= Overnote =============================*/
+.pagination {
+  margin-top: 30px;
+  text-align: center;
+}
+.pagination li {
+  display: inline-block;
+  margin: 0 10px;
+}
+.pagination .disabled {
+  display: none;
+}
+.pagination .active {
+  color: #8cdcf0;
+}
+
+.btn_prev_next {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn_prev_next li {
+  width: 30%;
+  margin: 10px;
+}
+.btn_prev_next li a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  background: #fff;
+  color: #8cdcf0;
+  height: 100%;
+  text-align: center;
+  padding: 22px 40px 20px 40px;
+  text-decoration: none;
+  border: 2px solid #8cdcf0;
+  transition: all 0.3s ease;
+  font-size: 20px;
+}
+.btn_prev_next li a:hover {
+  color: #fff;
+  background-color: #8cdcf0;
+}
+.btn_prev_next .prevPage {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.btn_prev_next .nextPage {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 750px) {
+  .btn_prev_next {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn_prev_next li {
+    width: 100%;
+    position: static !important;
+    max-width: 270px;
+  }
+  .btn_prev_next li a {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
 /*============================= HACK CSS =============================*/
 /* IE */
 /* EGDE */

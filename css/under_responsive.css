@@ -24,6 +24,7 @@
     display: block;
   }
   .tbl-block thead,
+.tbl-block tbody,
 .tbl-block tr,
 .tbl-block td,
 .tbl-block th {

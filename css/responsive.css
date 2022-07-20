@@ -7,24 +7,31 @@
     pointer-events: none;
   }
 
-  .menu-list>li:hover>a,
-  .menu-list>li:hover>span {
+  .no-scroll {
+    overflow: hidden;
+    -ms-touch-action: none;
+    touch-action: none;
+    -webkit-overflow-scrolling: auto;
+  }
+
+  .menu-list > li:hover > a,
+.menu-list > li:hover > span {
     color: red;
   }
 
-  .dropdown:hover>.sub-menu {
+  .dropdown:hover > .sub-menu {
     transform: translateY(0);
     pointer-events: auto;
     opacity: 1;
     visibility: visible;
     z-index: 1;
   }
-
-  .dropdown>span {
+  .dropdown > span {
     pointer-events: none;
   }
 
   .sub-menu {
+    display: block !important;
     position: absolute;
     top: 100%;
     left: 0;
@@ -36,22 +43,23 @@
     visibility: hidden;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.16);
   }
-
   .sub-menu a:hover,
-  .sub-menu span:hover {
+.sub-menu span:hover {
     color: #fff;
     background-color: #1a2542;
   }
-
   .sub-menu .sub-menu {
     top: 0;
     left: 100%;
   }
 }
-
 /* end screen-min:751px */
 /* end screen-min:751px && screen-max:1500px */
 @media screen and (max-width: 750px) {
+  [href^=tel]:hover {
+    color: unset !important;
+  }
+
   #wrapper {
     min-width: unset !important;
   }
@@ -93,9 +101,8 @@
     overflow-y: auto;
     height: calc(100vh - 100px);
   }
-
-  .menu-list>li>a,
-  .menu-list>li>span {
+  .menu-list > li > a,
+.menu-list > li > span {
     border-bottom: 1px solid #ebebeb;
     font-size: 14px;
     font-weight: bold;
@@ -109,7 +116,6 @@
   .dropdown .open::before {
     transform: scale(-1);
   }
-
   .dropdown span::before {
     content: "";
     border-top: solid 8px #1e2c63;
@@ -128,15 +134,13 @@
     display: none;
     padding: 10px 20px;
   }
-
   .sub-menu a,
-  .sub-menu span {
+.sub-menu span {
     padding: 6px 16px;
     position: relative;
   }
-
   .sub-menu a::after,
-  .sub-menu span::after {
+.sub-menu span::after {
     content: "";
     position: absolute;
     top: 16px;
@@ -146,7 +150,6 @@
     background-color: #004680;
   }
 }
-
 /* end screen-max:750px */
 /* end screen-max:640px */
 /* end screen-max:560px */
@@ -160,7 +163,6 @@
 /* EGDE */
 /* FIREFOX */
 @-moz-document url-prefix() {}
-
 /* Safari 10.1+ (which is the latest version of Safari at this time) */
 
 /*# sourceMappingURL=responsive.css.map */
