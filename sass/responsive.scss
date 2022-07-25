@@ -259,27 +259,6 @@
 /* end screen-max:475px */
 
 @include max-media(425px) {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    input,
-    button,
-    textarea,
-    select,
-    p,
-    blockquote,
-    th,
-    td,
-    pre,
-    address,
-    li,
-    dt,
-    dd {
-        // font-size: 140%;
-    }
 }
 
 /* end screen-max:425px */

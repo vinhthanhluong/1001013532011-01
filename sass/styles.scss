@@ -11,7 +11,7 @@
 // Core
 @import "./core/variable";
 @import "./core/mixins";
-@import "./core/rest";
+@import "./core/normalize";
 @import "./core/base";
 
 // Components
@@ -50,21 +50,3 @@
     // @media {
     // }
 }
-
-/*======================= WORDPRESS ADMIN LOGED IN ========================*/
-
-// .customize-support #header {
-//     margin-top: 32px;
-// }
-
-// @media screen and (max-width: 782px) {
-//     .customize-support #header {
-//         margin-top: 46px !important;
-//     }
-// }
-
-// @media screen and (max-width: 600px) {
-//     .customize-support #header {
-//         margin-top: 0px !important;
-//     }
-// }
