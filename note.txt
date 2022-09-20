@@ -1,0 +1,3 @@
+onclick="gtag('event', 'contact', {'event_category': 'sp'});
+onclick="gtag('event', 'tel', {'event_category': 'sp'});"
+

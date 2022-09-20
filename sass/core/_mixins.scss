@@ -12,9 +12,7 @@
 }
 
 //scroll-base
-@mixin custom-vertical-scrollbar($width: 0px,
-    $thumb: $main-cl,
-    $track: transparent) {
+@mixin custom-vertical-scrollbar($width: 0px, $thumb: $main-cl, $track: transparent) {
     &::-webkit-scrollbar {
         width: $width;
     }
@@ -29,9 +27,7 @@
     }
 }
 
-@mixin custom-horizontal-scrollbar($height: 0px,
-    $thumb: $main-cl,
-    $track: transparent) {
+@mixin custom-horizontal-scrollbar($height: 0px, $thumb: $main-cl, $track: transparent) {
     &::-webkit-scrollbar {
         height: $height;
     }

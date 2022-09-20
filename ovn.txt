@@ -27,7 +27,6 @@
 <!-- *********    /PAGINATION ********* -->
 
 <!-- *********   nextPage   ********* -->
-
 <div class="section">
     <div class="btn_prev_next_sec clearfix">
         <?php $current_url = $url; ?>
@@ -49,7 +48,7 @@
     </div>
 </div>
 
-<!--   Get Title    -->
+<!--   Get Title -> btn next   -->
 <div class="section">
     <div class="btn_prev_next_sec clearfix">
         <?php $current_url = $url; ?>
@@ -92,3 +91,12 @@
 		asdasdasdasdasdasdasd
 	</p>
 </ONIf>
+
+<!--   set checkbox     -->
+<?php $checkbox=(explode(",",$checkbox_Value)); foreach ($checkbox as $key) :?>
+	<ONCategory><?php if($key == $category_name){echo $category_url;}  ?></ONCategory>
+<?php endforeach;?>
+
+<?php $checkbox=(explode(",",checkbox_Value)); foreach ($checkbox as $key) :?>
+    <?php{echo $$key;}  ?>
+<?php endforeach;?>

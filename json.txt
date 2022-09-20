@@ -33,7 +33,7 @@
         "name" : "株式会社　エネチタ（ハウスドゥ 大府）",
         "founder":"",
         "foundingDate":"0000-00-00", //設立日
-        "description" : "知多エリアを中心に不動産売却を行う「HOUSEDO byエネチタ」では、不動産売却のお悩みに合わせた情報をご紹介しています。HOUSEDOでは東海市・大府市・東浦町・阿久比町・知多市・常滑市といった幅広いエリアで豊富な実績による不動産売却を行っています。",
+        "description" : "H1h1h1h1h1h1hh1h1h1h1",
         "url" : "https://www.housedo-enechita.jp",
         "logo": "https://www.housedo-enechita.jp/images/logo.svg",
         "telephone" : "0120-932-912", //電話番号
