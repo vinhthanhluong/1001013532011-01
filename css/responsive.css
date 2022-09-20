@@ -14,13 +14,39 @@
     -webkit-overflow-scrolling: auto;
   }
 
+  .header-menu {
+    width: 100%;
+  }
+
+  .menu-list > li {
+    width: 20%;
+    cursor: pointer;
+  }
   .menu-list > li:hover > a,
 .menu-list > li:hover > span {
-    color: red;
+    color: #fef102;
+    background-color: rgba(235, 50, 7, 0.8);
+  }
+  .menu-list > li:hover > a::after,
+.menu-list > li:hover > span::after {
+    border-color: #fef102;
+  }
+  .menu-list > li::before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: #fff;
+    opacity: 0.5;
+    z-index: 1;
+  }
+  .menu-list > li:first-child::before {
+    display: none;
   }
 
   .dropdown:hover > .sub-menu {
-    transform: translateY(0);
     pointer-events: auto;
     opacity: 1;
     visibility: visible;
@@ -28,24 +54,61 @@
   }
   .dropdown > span {
     pointer-events: none;
+    background-color: #eb3207;
+    color: #fff;
+    display: block;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .dropdown > span::after {
+    content: "";
+    display: inline-block;
+    margin-left: 10px;
+    width: 6px;
+    height: 6px;
+    border: 0px solid #fff;
+    border-width: 1px 1px 0 0;
+    transform: rotate(135deg);
+  }
+  .dropdown:first-child .sub-menu {
+    left: 0;
+    transform: translate(0);
+    min-width: 500px;
+  }
+  .dropdown:last-child .sub-menu {
+    left: unset;
+    right: 0;
+    transform: translate(0);
+    min-width: 500px;
   }
 
   .sub-menu {
     position: absolute;
     top: 100%;
-    left: 0;
-    min-width: 200px;
+    left: 50%;
+    min-width: 600px;
+    background-color: #ac1f00;
     transition: all 0.3s ease;
-    transform: translateY(10px);
+    transform: translate(-50%, 0);
     pointer-events: none;
     opacity: 0;
     visibility: hidden;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.16);
   }
+  .sub-menu a,
+.sub-menu span {
+    color: #fff;
+  }
   .sub-menu a:hover,
 .sub-menu span:hover {
-    color: #fff;
-    background-color: #8cdcf0;
+    color: #eb3207;
+    background-color: #fef102;
   }
   .sub-menu .sub-menu {
     top: 0;
@@ -53,6 +116,84 @@
   }
 }
 /* end screen-min:751px */
+@media screen and (min-width: 751px) and (max-width: 1919px) {
+  #header .logo {
+    display: flex;
+    align-items: center;
+  }
+  #header .logo img {
+    width: 300px;
+  }
+
+  .header-info {
+    margin-right: 10px;
+  }
+
+  .header-ih {
+    margin-right: 10px;
+  }
+  .header-ih .ih-tt {
+    font-size: 14px;
+  }
+  .header-ih .ih-img img {
+    height: 68px;
+  }
+
+  .header-ln {
+    width: 54px;
+    height: 54px;
+    margin-right: 10px;
+  }
+
+  .header-phone .phone-lk {
+    font-size: 24px;
+  }
+  .header-phone .phone-lk::before {
+    width: 32px;
+    height: 32px;
+  }
+  .header-phone .phone-text {
+    font-size: 12px;
+  }
+
+  .header-social {
+    column-gap: 5px;
+  }
+  .header-social .social-lk {
+    width: 34px;
+    height: 34px;
+  }
+
+  .header-btn {
+    width: 400px;
+  }
+  .header-btn .hd-w::before {
+    width: 32px;
+    height: 32px;
+  }
+  .header-btn .hd-w::after {
+    width: 10px;
+    height: 12px;
+    right: 7px;
+  }
+  .header-btn .hbn-tt {
+    font-size: 14px;
+  }
+  .header-btn .hbn-c {
+    width: 40px;
+    height: 18px;
+    font-size: 12px;
+  }
+  .header-btn .hd-btn {
+    height: 56px;
+  }
+  .header-btn .hd-btn:nth-child(1) {
+    height: 56px;
+  }
+  .header-btn .hd-btn:nth-child(3) .hd-w::after {
+    right: 7px;
+  }
+}
 /* end screen-min:751px && screen-max:1500px */
 @media screen and (max-width: 750px) {
   [href^=tel]:hover {
@@ -78,6 +219,44 @@
 
   .hamburger-btn {
     display: block;
+  }
+
+  .header-ln,
+.header-phone,
+.header-social,
+.header-btn,
+.ih-tt {
+    display: none;
+  }
+
+  #header {
+    padding: 0 0;
+  }
+  #header .logo img {
+    width: 200px;
+  }
+
+  .header-wrapper {
+    padding: 0 15px 0 9px;
+  }
+
+  .header-main {
+    align-items: center;
+    height: 70px;
+  }
+
+  .header-info {
+    margin: 0 20px 0 0;
+  }
+
+  .header-ih {
+    margin: 0;
+  }
+  .header-ih .ih-img {
+    line-height: 0;
+  }
+  .header-ih img {
+    height: 50px;
   }
 
   .header-menu {
@@ -153,9 +332,27 @@
 /* end screen-max:640px */
 /* end screen-max:560px */
 /* end screen-max:520px */
+@media screen and (max-width: 475px) {
+  #header .logo img {
+    width: 160px;
+  }
+
+  .header-info {
+    margin-right: 10px;
+  }
+
+  .header-ih img {
+    height: 46px;
+  }
+}
 /* end screen-max:475px */
 /* end screen-max:425px */
 /* end screen-max:375px */
+@media screen and (max-width: 320px) {
+  .header-ih img {
+    display: none;
+  }
+}
 /* end screen-max:320px */
 /*============================= HACK CSS =============================*/
 /* IE */

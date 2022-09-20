@@ -10,7 +10,7 @@
     [href^="tel"] {
         pointer-events: none;
     }
-    
+
     .no-scroll {
         overflow: hidden;
         -ms-touch-action: none;
@@ -19,13 +19,40 @@
     }
 
     //  ========================== Header ==========================
+    .header-menu {
+        // position: fixed;
+        width: 100%;
+    }
+
     .menu-list {
         //level 1
         > li {
+            width: calc(100% / 5);
+            cursor: pointer;
             &:hover {
                 > a,
                 > span {
-                    color: red;
+                    color: #fef102;
+                    background-color: rgba($color: #eb3207, $alpha: 0.8);
+                    &::after {
+                        border-color: #fef102;
+                    }
+                }
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0%;
+                left: 0;
+                width: 2px;
+                height: 100%;
+                background: #fff;
+                opacity: 0.5;
+                z-index: 1;
+            }
+            &:first-child {
+                &::before {
+                    display: none;
                 }
             }
         }
@@ -34,35 +61,72 @@
     .dropdown {
         &:hover {
             > .sub-menu {
-                transform: translateY(0);
+                // transform: translateY(0);
                 pointer-events: auto;
                 @include visible;
                 z-index: 1;
             }
         }
 
-        >span{
+        > span {
             pointer-events: none;
+            background-color: #eb3207;
+            color: #fff;
+            display: block;
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            position: relative;
+            transition: all 0.3s ease;
+            &::after {
+                content: "";
+                display: inline-block;
+                margin-left: 10px;
+                width: 6px;
+                height: 6px;
+                border: 0px solid #fff;
+                border-width: 1px 1px 0 0;
+                transform: rotate(135deg);
+            }
+        }
+        &:first-child {
+            .sub-menu {
+                left: 0;
+                transform: translate(0);
+                min-width: 500px;
+            }
+        }
+        &:last-child {
+            .sub-menu {
+                left: unset;
+                right: 0;
+                transform: translate(0);
+                min-width: 500px;
+            }
         }
     }
 
     .sub-menu {
         position: absolute;
         top: 100%;
-        left: 0;
-        min-width: 200px;
-
+        left: 50%;
+        min-width: 600px;
+        background-color: #ac1f00;
         transition: all 0.3s ease;
-        transform: translateY(10px);
+        transform: translate(-50%, 0);
         pointer-events: none;
         @include hidden;
         box-shadow: 10px 10px 30px rgba($color: black, $alpha: 0.16);
 
         a,
         span {
+            color: #fff;
             &:hover {
-                color: #fff;
-                background-color: $main-cl;
+                color: $main-cl;
+                background-color: #fef102;
             }
         }
 
@@ -77,7 +141,99 @@
 
 /* end screen-min:751px */
 
-@media screen and (min-width: 751px) and (max-width: 1500px) {
+@media screen and (min-width: 751px) and (max-width: 1919px) {
+    #header {
+        .logo {
+            display: flex;
+            align-items: center;
+            img {
+                width: 300px;
+            }
+        }
+    }
+
+    .header-info {
+        margin-right: 10px;
+    }
+
+    .header-ih {
+        margin-right: 10px;
+        .ih-tt {
+            font-size: 14px;
+        }
+        .ih-img {
+            img {
+                height: 68px;
+            }
+        }
+    }
+
+    .header-ln {
+        width: 54px;
+        height: 54px;
+        margin-right: 10px;
+    }
+
+    .header-phone {
+        .phone-lk {
+            font-size: 24px;
+            &::before {
+                width: 32px;
+                height: 32px;
+            }
+        }
+        .phone-text {
+            font-size: 12px;
+        }
+    }
+
+    .header-social {
+        column-gap: 5px;
+        .social-lk {
+            width: 34px;
+            height: 34px;
+        }
+    }
+
+    .header-btn {
+        width: 400px;
+        .hd-w {
+            &::before {
+                width: 32px;
+                height: 32px;
+            }
+            &::after {
+                width: 10px;
+                height: 12px;
+                right: 7px;
+            }
+        }
+        .hbn-tt {
+            font-size: 14px;
+        }
+        .hbn-c {
+            width: 40px;
+            height: 18px;
+            font-size: 12px;
+        }
+
+        .hd-btn {
+            height: 56px;
+            &:nth-child(1) {
+                height: 56px;
+            }
+            &:nth-child(3) {
+                .hd-w {
+                    &::after {
+                        right: 7px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 751px) and (max-width: 1600px) {
 }
 
 /* end screen-min:751px && screen-max:1500px */
@@ -85,30 +241,8 @@
 @include max-media(750px) {
     // ========================== Base code ==========================
 
-    // h1,
-    // h2,
-    // h3,
-    // h4,
-    // h5,
-    // h6,
-    // input,
-    // button,
-    // textarea,
-    // select,
-    // p,
-    // blockquote,
-    // th,
-    // td,
-    // pre,
-    // address,
-    // li,
-    // dt,
-    // dd {
-    //     font-size: 140%;
-    // }
-
     [href^="tel"] {
-        &:hover{
+        &:hover {
             color: unset !important;
         }
     }
@@ -139,6 +273,43 @@
     // ========================== END Base code ==========================
 
     //  ========================== Header ==========================
+    .header-ln,
+    .header-phone,
+    .header-social,
+    .header-btn,
+    .ih-tt {
+        display: none;
+    }
+    #header {
+        padding: 0 0;
+
+        .logo {
+            img {
+                width: 200px;
+            }
+        }
+    }
+    .header-wrapper {
+        padding: 0 15px 0 9px;
+    }
+
+    .header-main {
+        align-items: center;
+        height: 70px;
+    }
+    .header-info {
+        margin: 0 20px 0 0;
+    }
+    .header-ih {
+        margin: 0;
+        .ih-img {
+            line-height: 0;
+        }
+
+        img {
+            height: 50px;
+        }
+    }
     .header-menu {
         position: fixed;
         top: 100%;
@@ -254,6 +425,21 @@
 /* end screen-max:520px */
 
 @include max-media(475px) {
+    #header {
+        .logo {
+            img {
+                width: 160px;
+            }
+        }
+    }
+    .header-info {
+        margin-right: 10px;
+    }
+    .header-ih {
+        img {
+            height: 46px;
+        }
+    }
 }
 
 /* end screen-max:475px */
@@ -269,6 +455,9 @@
 /* end screen-max:375px */
 
 @include max-media(320px) {
+    .header-ih img {
+        display: none;
+    }
 }
 
 /* end screen-max:320px */

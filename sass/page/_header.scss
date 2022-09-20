@@ -1,35 +1,260 @@
 #header {
     background: #fff;
-    padding: 20px 0;
-    height: 100px;
+    padding: 0 0 4px;
+    // height: 100px;
     border-bottom: 1px solid black;
     width: 100%;
-    transition: all .3s ease;
-    h1{
-        padding-bottom: 50px;
+    transition: all 0.3s ease;
+    h1 {
+        display: none;
+    }
+
+    .logo{
+        a{
+            display: flex;
+        }
     }
 
     // &.--fix{
     //     position: fixed;
     //     top: 0;
     // }
+    
 }
 
-.header-main{
+.header-wrapper {
+    padding: 0 10px 0 5px;
+}
+
+.header-main {
     display: flex;
-    align-content: center;
+    // align-content: center;
     justify-content: space-between;
 }
 
-.header-act{
+.header-act {
     display: flex;
     align-items: center;
+}
+
+.header-info {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 18px;
+    margin-top: 22px;
+}
+
+.header-ih {
+    margin-right: 13px;
+    .ih-tt {
+        font-size: 20px;
+        transform: translateX(10px);
+        margin-bottom: 8px;
+    }
+}
+
+.header-ln {
+    width: 81px;
+    height: 82px;
+    display: inline-block;
+    margin: 0 19px 9px 0;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.header-phone {
+    margin: 0 8px 5px 0;
+    .phone-text {
+        font-size: 14px;
+        letter-spacing: -1px;
+        line-height: 1.8;
+    }
+
+    .phone-lk {
+        font-size: 31px;
+        color: #da2a03;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        letter-spacing: -1.6px;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: url("../images/ic-phone.png");
+            background-size: contain;
+            margin-right: 10px;
+        }
+    }
+}
+
+.header-social {
+    display: flex;
+    column-gap: 10px;
+    margin-bottom: 5px;
+
+    .social-lk {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+.header-btn {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 510px;
+    margin-top: 7px;
+
+    .hd-btn {
+        width: calc(50% - 5px);
+        height: 60px;
+        position: relative;
+        display: flex;
+        box-shadow: 3px 0 7px rgba($color: #000000, $alpha: 0.35);
+        border-radius: 8px;
+        overflow: hidden;
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(180deg, #b8b8b8 0%, transparent 50%, #b8b8b8 100%);
+            mix-blend-mode: multiply;
+        }
+
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            border-radius: 8px;
+        }
+
+        &:nth-child(1) {
+            width: 100%;
+            height: 64px;
+            // background: url("../images/bg-btn1.png")  no-repeat;
+            background-size: cover;
+            color: #fff;
+            margin-bottom: 10px;
+            background-color: #542200;
+            &::after{
+                border: 3px solid #854309;
+            }
+           
+
+            .hd-w {
+                &::before {
+                    background-image: url("../images/ic-book.png");
+                }
+                &::after {
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+        &:nth-child(2) {
+            // background: url("../images/bg-btn2.png");
+            background-color: #fef102;
+            color: #eb3207;
+            &::after{
+                border: 3px solid #fff768;
+            }
+            .hd-w {
+                &::before {
+                    background-image: url("../images/ic-text.png");
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            // background: url("../images/bg-btn3.png");
+            background-color: #eb3207;
+            color: #fff;
+            &::after{
+                border: 3px solid #ff7251;
+            }
+            .hd-w {
+                &::before {
+                    background-image: url("../images/ic-email.png");
+                    margin-right: 0;
+                    transform: translateX(-10px);
+                }
+                &::after {
+                    filter: brightness(0) invert(1);
+                    right: 9px;
+                }
+            }
+
+            .hbn-c {
+                margin-right: 0;
+                transform: translateX(-5px);
+            }
+        }
+    }
+
+    .hd-w {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 13px;
+            transform: translateY(-50%);
+            width: 14px;
+            height: 16px;
+            background-image: url("../images/ic-right.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .hbn-c {
+        background-color: #fff;
+        color: #da2a03;
+        font-size: 14px;
+        width: 52px;
+        height: 19px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 5px;
+    }
+
+    .hbn-tt {
+        font-size: 18px;
+    }
 }
 
 .menu-list {
     position: relative;
     display: flex;
-    column-gap: 25px;
 
     // style chung
     a {
@@ -37,7 +262,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        transition: all .3s ease;
+        transition: all 0.3s ease;
     }
 }
 
@@ -49,9 +274,9 @@
     width: 100%;
     background-color: white;
 
-    a , span {
+    a,
+    span {
         padding: 15px;
         display: block;
     }
 }
-
