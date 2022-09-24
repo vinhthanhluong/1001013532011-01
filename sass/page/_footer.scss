@@ -5,13 +5,97 @@
     margin-top: auto;
 
     .copyright {
-        padding: 14px 0;
+        padding: 26px 0;
         text-align: center;
-        color: #92d4e1;
-        background: #004870;
-        font-size: 11px;
-        letter-spacing: 0.005em;
+        color: #fff;
+        background: #542200;
+        font-size: 14px;
+        letter-spacing: 0.2px;
     }
 }
 
+.footer-top {
+    .ft-wrapper {
+        display: flex;
+    }
 
+    .ft-txt {
+        width: 384px;
+    }
+
+    .ft-logo {
+        display: flex;
+        transform: translateX(-16px);
+        margin-bottom: 7px;
+    }
+
+    .ft-info {
+        font-size: 20px;
+        margin-bottom: 32px;
+    }
+    .ft-map {
+        margin-top: 16px;
+        padding-left: 44px;
+        width: calc(100% - 384px);
+        line-height: 0;
+
+        .fmap {
+            margin-right: calc((100vw - 1200px) / -2);
+            // width: calc((100vw - 1200px) / 2  + 100%);
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+        }
+    }
+}
+
+.footer-bottom{
+    margin: 58px 0 80px;
+    color: #222222;
+
+    .fb-wrapper{
+        display: flex;
+        column-gap: 20px;
+    }
+
+    .fb-col{
+        &.col1{
+            padding-right: 76px;
+            .fb-list{
+                &:first-child{
+                    margin-bottom: 30px;
+                }
+            }
+        }
+        &.col2{
+            padding-right: 39px;
+        }
+        &.col3{
+            padding-right: 50px;
+        }
+    }
+
+    .fb-tt{
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .fb-sub{
+        padding-left: 12px;
+        li{
+            margin-bottom: 6px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+        a{
+            font-size: 14px;
+            &:hover{
+                color: $main-cl;
+            }
+        }
+    }
+}

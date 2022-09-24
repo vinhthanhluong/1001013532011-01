@@ -13,11 +13,12 @@ $(function () {
     }
     var obj = {
         init: function () {
-            // this.tab();
+            this.tab();
             this.toTop();
             this.anchorLink();
             this.matchHeight();
             this.menu();
+            this.sliderUnder();
             // this.scrollToMail();
             // this.accordion();
         },
@@ -45,10 +46,19 @@ $(function () {
 
             $(window).scroll(function () {
                 var st = $('html,body').scrollTop();
-                if (st > 10) {
+                if (st > 300) {
                     $('.scroll-top').addClass('--active');
+                    $('.btn-fix').addClass('--fix');
                 } else {
                     $('.scroll-top').removeClass('--active');
+                    $('.btn-fix').removeClass('--fix');
+                }
+
+                if (st > 10) {
+                    $('#header').addClass('--fix');
+                } else {
+                    $('#header').removeClass('--fix');
+
                 }
             });
         },
@@ -87,16 +97,17 @@ $(function () {
                 $('body').toggleClass('open-nav no-scroll');
             });
 
-            $('.overplay').click(function () {
+            $('.close-btn').click(function () {
                 $('.hamburger-btn').trigger('click');
             });
+
 
             if ($('.header-menu').length) {
                 $('.dropdown > span').click(function () {
                     $(this).toggleClass('open');
                     $(this).next('.sub-menu').stop().slideToggle();
-                    // $(this).closest('.dropdown').siblings().find('.sub-menu').stop().slideUp();
-                    // $(this).closest('.dropdown').siblings().find('span').removeClass('open');
+                    $(this).closest('.dropdown').siblings().find('.sub-menu').stop().slideUp();
+                    $(this).closest('.dropdown').siblings().find('span').removeClass('open');
                 });
 
                 $(window).on('resize load', function () {
@@ -107,6 +118,40 @@ $(function () {
                     }
                 });
             }
+        },
+
+        sliderUnder: function () {
+            $('.wkd-bg').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                fade: true,
+                asNavFor: '.wkd-sm',
+            });
+            $('.wkd-sm').slick({
+                slidesToShow: 6,
+                slidesToScroll: 1,
+                asNavFor: '.wkd-bg',
+                focusOnSelect: true,
+                arrows: false,
+                responsive: [
+                    {
+                        breakpoint: 751,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 426,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                        }
+                    },
+
+                ]
+            });
         },
 
         //scroll to mail form

@@ -1,3 +1,44 @@
 .main-cl{
     color: $main-cl;
 }
+
+.text-en {
+    font-family: $dancing;
+    font-size: 24px;
+    font-weight: bold;
+    color: $main-cl;
+    text-transform: capitalize;
+    display: inline-block;
+    border: 2px solid #f00010;
+    width: 128px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 11px;
+    letter-spacing: -1px;
+}
+
+.text-jp {
+    font-weight: bold;
+    font-size: 50px;
+    letter-spacing: 2px;
+    color: #fff;
+    margin: 0 auto;
+    position: relative;
+    z-index: 0;
+    .jp-br {
+        text-shadow: 2px 0 #222222, -2px 0 #222222, 0 2px #222222, 0 -2px #222222, 1px 1px #222222,
+            -1px -1px #222222, 1px -1px #222222, -1px 1px #222222;
+    }
+
+    .jp-sd {
+        text-shadow: 0 0 14px rgba($color: #222222, $alpha: 0.8), 0 0 14px #222222;
+        // @include pos-mid;
+        // white-space: nowrap;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        z-index: -1;
+    }
+}

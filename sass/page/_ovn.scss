@@ -21,11 +21,11 @@
     justify-content: center;
     flex-wrap: wrap;
 
-    li{
+    li {
         width: 30%;
         margin: 10px;
 
-        a{
+        a {
             position: relative;
             overflow: hidden;
             display: flex;
@@ -42,26 +42,379 @@
             transition: all 0.3s ease;
             font-size: 20px;
 
-            &:hover{
+            &:hover {
                 color: #fff;
                 background-color: $main-cl;
             }
         }
     }
 
-    .prevPage{
+    .prevPage {
         position: absolute;
         top: 0;
         left: 0;
     }
-    .nextPage{
+    .nextPage {
         position: absolute;
         top: 0;
         right: 0;
     }
 }
 
-@include max-media(750px){
+.w40 {
+    width: 40%;
+}
+
+.w25 {
+    width: 25%;
+}
+
+.w15 {
+    width: 15%;
+}
+
+.works {
+    .works-wrapper {
+        width: 730px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .works-item {
+        margin-bottom: 90px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .works-title {
+        margin-bottom: 20px;
+        font-weight: bold;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .wk-en {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url("../images/works-en.jpg") center center no-repeat;
+        background-size: 35px auto;
+        height: 35px;
+        font-size: 12px;
+        color: #000000;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    .wk-jp {
+        font-size: 22px;
+        color: #db0606;
+        margin-bottom: 25px;
+    }
+
+    .works-btn {
+        display: flex;
+        justify-content: flex-end;
+        a {
+            width: 250px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            box-sizing: border-box;
+            border: 2px #000000 solid;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #000000;
+            position: relative;
+            letter-spacing: 5px;
+            z-index: 1;
+            box-shadow: 4px 6px 0px 0px rgb(0 0 0);
+            float: right;
+            transition: all 0.3s ease;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+        span {
+            background: url("../images/ic-rt-tb.png") no-repeat left center;
+            background-size: 24px auto;
+            padding: 10px 10px 10px 35px;
+        }
+    }
+}
+
+.works-tbl {
+    width: 100%;
+    margin-bottom: 20px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
+    td,
+    th {
+        padding: 15px 10px;
+        box-sizing: border-box;
+        border: #ffffff 1px solid;
+    }
+    td {
+        background: #f4f4f4;
+        font-size: 15px;
+    }
+    th {
+        text-align: center;
+        font-weight: normal;
+        color: #ffffff;
+        background: #7fa980;
+        background: #f16f51;
+        font-size: 16px;
+    }
+
+    .wk-price {
+        font-size: 22px;
+        font-family: $roboto;
+        font-weight: bold;
+    }
+
+    .wk-img {
+        display: block;
+        line-height: 0;
+    }
+}
+
+.works-detail {
+    .wkd-box {
+        display: flex;
+        margin-bottom: 60px;
+    }
+    .wkd-item {
+        width: 45%;
+    }
+
+    .wkd-arrow {
+        width: 10%;
+        margin-top: 37px;
+        position: relative;
+    }
+
+    .w-ar {
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        background-color: #828282;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 44%;
+            width: 8px;
+            height: 8px;
+            border: 0px solid #fff;
+            border-width: 1px 1px 0 0;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+    }
+
+    .wkd-tt {
+        font-weight: bold;
+        font-size: 16px;
+        text-transform: capitalize;
+    }
+
+    .wkd-img {
+        line-height: 0;
+        position: relative;
+        width: 100%;
+        height: 364px;
+        background-color: #f4f4f4;
+        img {
+            @include pos-mid;
+            max-height: 100%;
+        }
+    }
+
+    .works-tbl {
+        margin-bottom: 60px;
+    }
+
+    .works-title {
+        margin-bottom: 50px;
+    }
+}
+
+.wkd-slider {
+    margin-bottom: 70px;
+    .wkd-bg {
+        margin-bottom: 30px;
+        .wkd-sld {
+            height: 640px;
+        }
+    }
+
+    .slick-arrow {
+        width: 41px;
+        height: 94px;
+        z-index: 1;
+        &::before {
+            content: "";
+            display: block;
+            margin: auto;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .slick-prev {
+        left: 5px;
+        &::before {
+            background: url("../images/ic-next.png") no-repeat left center;
+            background-size: cover;
+        }
+    }
+
+    .slick-next {
+        right: 5px;
+        &::before {
+            background: url("../images/ic-prev.png") no-repeat left center;
+            background-size: cover;
+        }
+    }
+
+    .wkd-sm {
+        .slick-list {
+            margin: 0 -5px;
+        }
+
+        li {
+            margin: 0 5px;
+        }
+
+        .wkd-sld {
+            height: 130px;
+            position: relative;
+            cursor: pointer;
+            &::before{
+                content: '';
+                @include pos-full;
+                z-index: 1;
+                background-color: #fff;
+                transition:  all .3s ease;
+                opacity: 0;
+            }
+            &:hover{
+                &::before{
+                    opacity: 0.3;
+                }
+            }
+        }
+    }
+
+    .wkd-sld {
+        background-color: #f4f4f4;
+        width: 100%;
+        position: relative;
+
+        img {
+            max-height: 100%;
+            @include pos-mid;
+        }
+    }
+}
+
+@include max-media(750px) {
+    .works {
+        padding: 0 15px;
+        .works-item {
+            margin-bottom: 60px;
+        }
+
+        .works-btn {
+            justify-content: center;
+            a {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .works-tbl {
+        td,
+        th {
+            display: block;
+            width: 100% !important;
+        }
+        td {
+            min-height: 43px;
+        }
+    }
+
+    .works-detail {
+        .works-title {
+            margin-bottom: 30px;
+        }
+        .wkd-box {
+            flex-wrap: wrap;
+            max-width: 400px;
+            margin: 0 auto 40px;
+        }
+
+        .wkd-item {
+            width: 100%;
+        }
+
+        .wkd-arrow {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .w-ar {
+            position: relative;
+            display: inline-block;
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        .wkd-img {
+            height: 300px;
+        }
+
+        .works-tbl {
+            margin-bottom: 40px;
+        }
+
+        .works-slider {
+            margin-bottom: 50px;
+        }
+    }
+
+    .wkd-slider {
+        .wkd-bg {
+            margin-bottom: 20px;
+            .wkd-sld {
+                height: 370px;
+            }
+        }
+
+        .wkd-sm {
+            .wkd-sld {
+                height: 110px;
+            }
+        }
+
+        .slick-arrow {
+            width: 24px;
+            height: 56px;
+        }
+
+       
+    }
+
     .btn_prev_next {
         flex-direction: column;
         align-items: center;
@@ -73,6 +426,38 @@
             a {
                 padding: 10px 20px;
                 font-size: 16px;
+            }
+        }
+    }
+}
+
+@include max-media(425px) {
+    .works-detail {
+        .wkd-img {
+            height: 220px;
+        }
+    }
+    .works-tbl {
+        td,
+        th {
+            padding: 10px;
+        }
+
+        .wk-price {
+            font-size: 18px;
+        }
+    }
+
+    .wkd-slider {
+        .wkd-bg {
+            .wkd-sld {
+                height: 260px;
+            }
+        }
+
+        .wkd-sm {
+            .wkd-sld {
+                height: 80px;
             }
         }
     }
